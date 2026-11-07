@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accès refusé</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="card wide">
+    <h1>403 – Accès refusé</h1>
+    <div class="alert error">Vous n'avez pas le rôle requis pour accéder à cette page.</div>
+    <p class="muted">La page demandée (<code th:text="${path}">/admin/dashboard</code>) est réservée au rôle <code>ROLE_ADMIN</code>.</p>
+
+    <div class="actions">
+        <a class="btn secondary" th:href="@{/home}">Retour à l'accueil</a>
+    </div>
+</div>
+</body>
+</html>

@@ -31,7 +31,9 @@ button, .btn {
     border-radius: 6px;
     background: #2563eb;
     color: #fff;
+    font-family: inherit;
     font-size: 1rem;
+    line-height: 1.2;
     text-decoration: none;
     cursor: pointer;
 }
