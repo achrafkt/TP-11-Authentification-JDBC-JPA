@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau de bord utilisateur</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="card wide">
+    <h1>Tableau de bord utilisateur</h1>
+    <p>Connecté en tant que <strong th:text="${username}">user</strong>.</p>
+    <p class="muted">Cette page est accessible aux rôles <code>ROLE_USER</code> et <code>ROLE_ADMIN</code>.</p>
+
+    <div class="actions">
+        <a class="btn secondary" th:href="@{/home}">Retour à l'accueil</a>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="secondary btn">Déconnexion</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

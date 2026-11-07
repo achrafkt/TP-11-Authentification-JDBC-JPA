@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau de bord admin</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="card wide">
+    <h1>Tableau de bord administrateur</h1>
+    <p>Connecté en tant que <strong th:text="${username}">admin</strong> (rôle ADMIN).</p>
+    <p class="muted">Cette page n'est accessible qu'aux utilisateurs ayant le rôle <code>ROLE_ADMIN</code>.</p>
+
+    <div class="actions">
+        <a class="btn secondary" th:href="@{/home}">Retour à l'accueil</a>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="secondary btn">Déconnexion</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

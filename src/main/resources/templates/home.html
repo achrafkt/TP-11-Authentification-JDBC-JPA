@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="card wide">
+    <h1>Bienvenue, <span th:text="${username}">utilisateur</span> !</h1>
+
+    <p>Vos rôles :
+        <span class="badge" th:each="r : ${roles}" th:text="${r.authority}">ROLE</span>
+    </p>
+
+    <div class="actions">
+        <a class="btn" th:href="@{/user/dashboard}">Espace utilisateur</a>
+        <a class="btn danger" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/dashboard}">Espace admin</a>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="secondary btn">Déconnexion</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
